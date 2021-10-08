@@ -123,6 +123,6 @@ console.log(cleanerdata.cleanpassword)
 });
 
     
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log('listening to port 3000');
 });
