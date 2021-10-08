@@ -11,7 +11,7 @@ const app = express();
 app.use(express.static("public"));
 
 var db;
-//hello jdjsbcdb//
+
 
 // MongoClient.connect('mongodb+srv://Scourgifytest:Scourgifytest123@cluster0.5wjme.mongodb.net/Cluster0?retryWrites=true&w=majority', function (err, database) {
 //     if(err) return console.log(err);net/tes
