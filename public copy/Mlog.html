@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scourgify</title>
+    <link rel="stylesheet" href="Mlog.css" />
+    <!---we had linked our css file----->
+  </head>
+  <body style="background-color: black">
+    <div class="full-page">
+      <div class="navbar">
+        <div>
+          <a href="website.html">SCOURGIFY</a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            
+            <li><a href="index.html">HOME</a></li>
+            
+            <li>
+              <button class="aboutbtn" onclick="aboutus_on()">ABOUT US</button>
+            </li>
+
+            <li>
+              <button class="loginbtn" onclick="login_on()">LOGIN</button>
+            </li>
+
+            <li>
+              <button class="faqbtn" onclick="faq_on()">FAQ's</button>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+      <div class="content" style="height: 93%;">
+        <div id="overlay2" style="display: none">
+          <div class="login-page login-form">
+            <div class="form-box">
+              <div class="button-box">
+                <div id="btn"></div>
+                <button type="button"  onclick="login()" class="toggle-btn">
+                  Log In
+                </button>
+                <button type="button" onclick="register()" class="toggle-btn">
+                  Register
+                </button>
+              </div>
+              <form id="login" class="input-group-login">
+                <input type="email" class="input-field" placeholder="Email Id" required />
+                <input type="password" class="input-field" placeholder="Enter Password" required />
+                <input type="checkbox" class="check-box" /><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Log in</button>
+              </form>
+              <form id="register" class="input-group-register">
+                <input type="text" class="input-field" placeholder="First Name" required/>
+                <input type="text" class="input-field" placeholder="Last Name" required/>
+                <input type="email" class="input-field" placeholder="Email Id"  required />
+                <input type="password" class="input-field" placeholder="Enter Password" required />
+                <input type="password" class="input-field" placeholder="Confirm Password" required/>
+                <input type="checkbox" class="check-box" /><span>I agree to the terms and conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="overlay1" class="" style="display: none;">
+            <div class="about-page about-form">
+                <div class="about-box">
+                  <h2>About Us</h2>
+                  <div class="para">
+                    <p>We all have been doing online be it with paying bills to grocery shopping.</p>
+                    <p>Often we don't have enough time to get our houses, offices cleaned entirely.</p> 
+                     <p>The maids we hire do a varied amount of chores but what if it's something really big to clean?</p>
+                     <p> What if we wish to clean on a larger surface?</p><br>
+                     <p> So our mini-project "Scourgify" aims to provide a thorough cleaning service to all the possible places.</p>
+                    <p> Our website is one place where you can find a varied number of cleaning services that will help you out with your chores with just an upload.</p>
+                      <p>It comes under the category of a "Cleaning Service Website".</p>
+                     <p>The service will consist of a team of specialized cleaners with proper equipment.
+                      </p>
+                      <br>
+                      <br>
+                      <p>Prepared by Aman Khaki - Nancy Merciline - Berlius Pereira</p>
+                    </div>
+                </div>
+              </div>
+        </div>
+        
+        <div id="overlay3" class="" style="display: none;">
+            <div class="faq-form">
+                <div class="faq-box">
+                  <h2>FAQ's</h2>
+                </div>
+              </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      var x = document.getElementById("login");
+      var y = document.getElementById("register");
+      var z = document.getElementById("btn");
+      function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+      }
+      function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0px";
+      }
+    </script>
+
+    <script>
+      function aboutus_on() {
+        console.log("works");
+        var x1 = document.getElementById("overlay1");
+        var x2 = document.getElementById("overlay2");
+        var x3 = document.getElementById("overlay3");
+
+        if (x1.style.display === "none") {
+            x2.style.display = "none";
+            x3.style.display = "none";
+            x1.style.display = "block";
+        } else {
+          x1.style.display = "none";
+        }
+      }
+
+      function login_on() {
+        console.log("works2");
+        var x1 = document.getElementById("overlay1");
+        var x2 = document.getElementById("overlay2");
+        var x3 = document.getElementById("overlay3");
+
+        if (x2.style.display === "none") {
+            x1.style.display = "none";
+            x2.style.display = "block";        
+            x3.style.display = "none";        
+        } else {
+          x2.style.display = "none";
+        }
+      }
+      
+      function faq_on() {
+        console.log("works3");
+        var x1 = document.getElementById("overlay1");
+        var x2 = document.getElementById("overlay2");
+        var x3 = document.getElementById("overlay3");
+
+        if (x3.style.display === "none") {
+            x1.style.display = "none";
+            x2.style.display = "none";        
+            x3.style.display = "block";        
+        } else {
+          x3.style.display = "none";
+        }
+      }
+
+        window.addEventListener('click', function(event){
+	            var box1 = document.getElementById("overlay1");
+	            if(event.target.parentNode === box1){
+                console.log("closing the overlay1")
+		            box1.style.display = 'none';
+                }    
+        });
+
+        window.addEventListener('click', function(event){
+	            var box2 = document.getElementById("overlay2");
+               if(event.target === box2){
+                  console.log("closing the overlay2")
+                  box2.style.display = 'none';
+                }    
+        }); 
+        
+        window.addEventListener('click', function(event){
+	            var box3 = document.getElementById("overlay3");
+               if(event.target.parentNode === box3){
+                  console.log("closing the overlay3")
+                  box3.style.display = 'none';
+                }    
+        }); 
+
+    </script>
+  </body>
+</html>
