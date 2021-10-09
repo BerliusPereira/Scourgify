@@ -35,7 +35,7 @@
       </div>
       <div class="contact-form">
         <h2>REQUEST SERVICE</h2>
-        <form class="contact" action="/upload" method="POST">
+        <form class="contact" action="/upload" method="POST" id="form-alert" onsubmit="upload()">
           <input type="text" name="fname" class="text-box" placeholder="First Name" style="margin-right: 12px;"required>
           <input type="text" name="lname" class="text-box" placeholder="Last Name" required>
           <input type="email" name="email" class="text-box" placeholder="Email-ID" style="margin-right: 12px;" required>
@@ -44,9 +44,9 @@
           <textarea name="message"name="message" class="desc" placeholder="Service Description (Please specify the services your require)" required></textarea>
           
 
-          <input type="file" id="real-file" hidden="hidden" multiple/>
-          <button type="button" id="custom-button">CHOOSE IMAGE</button>
-          <span id="custom-text">No image chosen, yet.</span>
+          
+        
+         
 
           <input type="submit" name="submit" class="send-btn" value="UPLOAD">
 
@@ -55,6 +55,11 @@
     </div>
 
     <script src="Mupload.js"></script>
+    <script>
+        function upload(){
+          alert("Your request has been sent successfully... you will recieve a confxrmation mail uwu")
+        }
+    </script>
   </body>
  
 
