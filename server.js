@@ -8,7 +8,8 @@ const bcrypt = require('bcryptjs');
 const { getMaxListeners } = require('./model/User');
 
 const app = express();
-app.use(express.static("public"));
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname+"/public"));
 
 var db;
 
@@ -26,21 +27,28 @@ app.use(bodyParser.json());
 mongoose.connect('mongodb+srv://Scourgifytest:Scourgifytest123@cluster0.5wjme.mongodb.net/Cluster0?retryWrites=true&w=majority', { useNewUrlParser: true }, () => {console.log('DB connected...')});
 app.get('/', function (req, res) {
    // res.send('This is a Get');
-   res.sendFile(__dirname + '/Mmain.html');
+//    res.sendFile(__dirname + '/Mmain.html');
+    res.render('Mmain')
 });
 
 app.get('/Mlog', function (req,res){
-    res.sendFile(__dirname + '/Mlog.html');
+    res.render('Mlog');
 });
 app.get('/MCushome', function (req,res){
-    res.sendFile(__dirname + '/MCushome.html');
+    res.render('MCushome');
 });
 
 app.get('/Mupload', function(req, res){
-    res.sendFile(__dirname + '/Mupload.html')
+    res.render('Mupload')
 });
 app.get('/MClehome', function(req, res){
-    res.sendFile(__dirname + '/MClehome.html')
+    res.render('MClehome')
+});
+app.get('/Mcontact', function(req, res){
+    res.render('Mcontact')
+});
+app.get('/index', function(req, res){
+    res.render('index')
 });
 
 app.post('/todo', async(req, res) => {
