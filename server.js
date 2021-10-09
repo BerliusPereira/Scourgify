@@ -35,20 +35,22 @@ app.get('/Mlog', function (req,res){
     res.render('Mlog');
 });
 app.get('/MCushome', function (req,res){
+
     res.render('MCushome');
 });
 
 app.get('/Mupload', function(req, res){
     res.render('Mupload')
 });
-app.get('/MClehome', function(req, res){
+app.get('/MClehome', async function(req, res){
     res.render('MClehome')
 });
 app.get('/Mcontact', function(req, res){
     res.render('Mcontact')
 });
-app.get('/index', function(req, res){
-    res.render('index')
+app.get('/index', async function(req, res){
+    const upload = await Upload.find();
+    res.render('index', {data : upload})
 });
 app.get('/Mmain', function(req, res){
     res.render('Mmain')
