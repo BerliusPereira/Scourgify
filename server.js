@@ -50,6 +50,9 @@ app.get('/Mcontact', function(req, res){
 app.get('/index', function(req, res){
     res.render('index')
 });
+app.get('/Mmain', function(req, res){
+    res.render('Mmain')
+});
 
 app.post('/todo', async(req, res) => {
    
