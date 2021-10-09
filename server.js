@@ -68,6 +68,8 @@ const user = new User({
     Last_Name: req.body.Last_Name,
     Email_Id: req.body.Email_Id,
     Phone_number:req.body.Phone_number,
+    gender:req.body.gender,
+    
     date_of_Birth:req.body.date_of_Birth,
     Password: hashedPassword
 });

@@ -26,12 +26,12 @@ const userSchema = mongoose.Schema({
         min:10,
         max:20
     },
-    // gender: {
-    //     type: String,
-    //     required: true,
-    //     min: 6,
-    //     max: 255
-    // },
+    gender: {
+        type: String,
+        required: true,
+        min: 6,
+        max: 255
+    },
     Password: {
         type: String,
         required: true,
