@@ -48,6 +48,9 @@ app.get('/MClehome', async function(req, res){
 app.get('/Mcontact', function(req, res){
     res.render('Mcontact')
 });
+app.get('/Mcontact2', function(req, res){
+    res.render('Mcontact2')
+});
 app.get('/index', async function(req, res){
     const upload = await Upload.find();
     res.render('index', {data : upload})
