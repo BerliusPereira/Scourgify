@@ -29,17 +29,19 @@
         <div class="content" style="width: 100%; height: 100%; padding: 30px; display: flex;">
             
             <% data.forEach(data=>{ %>
-                <div style="width: 300px; height: 300px; background-color: #fff; border-radius: 12px; margin: 20px;" class="card">
-                    first name:<%= data.fname%>
-                    last name:<%= data.lname%>
-                    email:<%= data.email%>
-                    phone:<%= data.phone%>
-                    Address:<%= data.Address%>
-                    message:<%= data.message%>
+                <div style="width: 300px; height: 280px;color: rgba(147, 229, 243, 0.842); background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));font-family: 'Calibri'; border-radius: 12px; margin: 20px; padding-top: 40px;padding-bottom: 40px;" class="card">
+                   <center>First Name:<%= data.fname%><br></center>
+                   <center>Last Name:<%= data.lname%><br></center>
+                   <center>Email-ID:<%= data.email%><br></center>
+                   <center>Phone:<%= data.phone%><br></center>
+                   <center>Address:<%= data.Address%><br></center>
+                   <center>Message:<%= data.message%></center>
                 </div>
           <%  }) %>
-        </div>
+    
 
+        </div>
+    
 
 </body>
 </html>
